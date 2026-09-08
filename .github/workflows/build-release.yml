@@ -43,8 +43,12 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           $tag = $env:GITHUB_REF_NAME
-          gh release create $tag dist/UniversalEngine-Editor-*.zip `
-            --title "Universal Engine $tag" `
-            --notes "Distribucion para Windows x64 (OpenGL 4.3+)."
+          if (gh release view $tag > $null 2>&1) {
+            gh release upload $tag dist/UniversalEngine-Editor-*.zip --clobber
+          } else {
+            gh release create $tag dist/UniversalEngine-Editor-*.zip `
+              --title "Universal Engine $tag" `
+              --notes "Distribucion para Windows x64 (OpenGL 4.3+)."
+          }
         env:
           GH_TOKEN: ${{ github.token }}

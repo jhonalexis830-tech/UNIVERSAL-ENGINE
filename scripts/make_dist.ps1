@@ -36,6 +36,7 @@ $distAssets = Join-Path $distDir "assets"
 # --- Preparar la carpeta de distribución -------------------------------
 if (Test-Path $distDir) { Remove-Item $distDir -Recurse -Force }
 New-Item -ItemType Directory -Path $distDir -Force | Out-Null
+New-Item -ItemType Directory -Path $distAssets -Force | Out-Null
 
 Copy-Item $exe.FullName (Join-Path $distDir "UE_Editor.exe")
 
