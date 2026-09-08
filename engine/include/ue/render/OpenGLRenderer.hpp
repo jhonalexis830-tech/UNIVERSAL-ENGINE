@@ -3,6 +3,8 @@
 #include "ue/core/Types.hpp"
 #include "ue/math/Color.hpp"
 #include "ue/math/Matrix4.hpp"
+#include "ue/math/Vector3.hpp"
+#include "ue/render/Camera.hpp"
 #include "ue/render/IRenderer.hpp"
 #include "ue/render/ShaderProgram.hpp"
 #include "ue/render/Vertex.hpp"
@@ -10,9 +12,6 @@
 #include <unordered_map>
 
 namespace ue::render {
-
-class Camera;
-struct Lights;
 
 /// Renderizador OpenGL 4.3 con rejilla de trabajo y FBO para el viewport.
 class OpenGLRenderer final : public IRenderer {
@@ -64,13 +63,13 @@ private:
     i32 vpH_ = 0;
     bool wireframe_ = false;
 
-    Matrix4 view_;
-    Matrix4 projection_;
-    Vector3 cameraPosition_;
+    math::Matrix4 view_;
+    math::Matrix4 projection_;
+    math::Vector3 cameraPosition_;
     Lights lights_;
 
     std::unordered_map<const scene::MeshComponent*, GpuMesh> meshCache_;
-    std::unordered_map<const scene::MeshComponent*, core::u64> meshRevisions_;
+    std::unordered_map<const scene::MeshComponent*, u64> meshRevisions_;
 };
 
 } // namespace ue::render

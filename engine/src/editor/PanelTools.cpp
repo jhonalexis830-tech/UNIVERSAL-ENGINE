@@ -1,6 +1,7 @@
 #include "ue/editor/PanelTools.hpp"
 
 #include <imgui.h>
+#include <imgui_internal.h>
 
 namespace ue::editor {
 

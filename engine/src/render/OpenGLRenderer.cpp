@@ -302,7 +302,7 @@ GpuMesh& OpenGLRenderer::meshCacheFor(scene::MeshComponent& mesh) {
     }
     // Re-sincroniza si los datos del vértice cambiaron (edición del polígono).
     const auto revIt = meshRevisions_.find(&mesh);
-    const core::u64 lastRev = (revIt != meshRevisions_.end()) ? revIt->second : 0u;
+    const u64 lastRev = (revIt != meshRevisions_.end()) ? revIt->second : 0u;
     if (lastRev != mesh.revision()) {
         if (mesh.data()) {
             existing->second.upload(*mesh.data());

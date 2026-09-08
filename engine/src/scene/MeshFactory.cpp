@@ -125,8 +125,8 @@ render::MeshDataPtr MeshFactory::sphere(f32 radius, i32 slices, i32 stacks) {
     for (int j = 0; j < nstacks; ++j) {
         for (int i = 0; i < nslices; ++i) {
             const u32 a = static_cast<u32>(j) * (nslices + 1) + i;
-            const u32 b = a + nslices + 1;
-            b.quad(a, b, b + 1, a + 1);
+            const u32 b2 = a + nslices + 1;
+            b.quad(a, b2, b2 + 1, a + 1);
         }
     }
     return b.finish();

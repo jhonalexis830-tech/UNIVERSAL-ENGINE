@@ -24,14 +24,14 @@ public:
     std::string primitiveType;
 
     /// Aumenta cada vez que cambian los datos (para re-subida eficiente a GPU).
-    core::u64 revision() const { return revision_; }
+    u64 revision() const { return revision_; }
 
     void markEdited() { ++revision_; }
 
 private:
     render::MeshDataPtr meshData_;
     render::MaterialPtr material_;
-    core::u64 revision_ = 0;
+    u64 revision_ = 0;
 };
 
 /// Crea un GameObject con una malla y material (Sugar para el editor).

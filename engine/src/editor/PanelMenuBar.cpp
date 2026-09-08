@@ -6,6 +6,7 @@
 #include "ue/core/SystemPaths.hpp"
 #include "ue/editor/EditorActions.hpp"
 #include "ue/math/Color.hpp"
+#include "ue/media/FrameRecorder.hpp"
 #include "ue/scene/Scene.hpp"
 #include "ue/scene/components/LightComponent.hpp"
 

@@ -1,6 +1,7 @@
 #include "ue/editor/PanelInspector.hpp"
 
 #include "ue/render/Material.hpp"
+#include "ue/physics/Physics.hpp"
 #include "ue/scene/Scene.hpp"
 #include "ue/scene/Transform.hpp"
 #include "ue/scene/components/LightComponent.hpp"
@@ -140,7 +141,7 @@ void PanelInspector::draw() {
     scene::GameObject& object = *state_.selected;
 
     ImGui::Text("Objeto: %s", object.name.c_str());
-    ImGui::Text("ID: %s", object.id.toString().c_str());
+    ImGui::Text("ID: %s", object.id.toHex().c_str());
 
     bool visible = object.visible;
     if (ImGui::Checkbox("Visible", &visible)) {

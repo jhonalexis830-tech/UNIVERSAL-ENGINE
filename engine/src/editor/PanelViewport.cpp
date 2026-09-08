@@ -5,6 +5,7 @@
 #include "ue/editor/TransformGizmo.hpp"
 #include "ue/math/Vector2.hpp"
 #include "ue/platform/IInput.hpp"
+#include "ue/render/IRenderer.hpp"
 #include "ue/scene/Scene.hpp"
 #include "ue/scene/components/MeshComponent.hpp"
 

@@ -23,7 +23,7 @@ target_include_directories(engine PUBLIC
     "${CMAKE_CURRENT_LIST_DIR}/include"
 )
 target_compile_features(engine PUBLIC cxx_std_17)
-target_link_libraries(engine PUBLIC ue_imgui glfw)
+target_link_libraries(engine PUBLIC ue_imgui glfw nlohmann_json::nlohmann_json)
 
 # ---- Compilador ---------------------------------------------
 if(MSVC)

@@ -15,6 +15,7 @@
 #include "ue/math/Vector3.hpp"
 #include "ue/media/FrameRecorder.hpp"
 #include "ue/physics/Physics.hpp"
+#include "ue/platform/IInput.hpp"
 #include "ue/render/IRenderer.hpp"
 #include "ue/scene/Scene.hpp"
 

@@ -1,4 +1,5 @@
 #include "ue/editor/EditorActions.hpp"
+#include "ue/editor/EditorState.hpp"
 
 #include "ue/core/Log.hpp"
 #include "ue/core/SystemPaths.hpp"
@@ -115,7 +116,7 @@ void EditorActions::newScene(EditorState& state) {
 }
 
 void EditorActions::exportFrame(EditorState& state) {
-    std::vector<ue::u8> rgba;
+    std::vector<u8> rgba;
     state.renderer.readViewportRGBA(rgba);
     if (rgba.empty()) {
         core::Log::instance().warn("No se pudo capturar el viewport (FBO vacío).");

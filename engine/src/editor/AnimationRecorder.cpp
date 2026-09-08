@@ -2,6 +2,7 @@
 
 #include "ue/math/Vector3.hpp"
 #include "ue/scene/GameObject.hpp"
+#include "ue/scene/Scene.hpp"
 
 namespace ue::editor {
 
@@ -9,7 +10,7 @@ using ue::math::Vector3;
 
 void AnimationRecorder::start(anim::AnimationClip& clip, ue::scene::GameObject& target) {
     clip_ = &clip;
-    targetId_ = target.uuid;
+    targetId_ = target.id;
     hasLast_ = false;
     lastKeyState_ = Vector3(1e9f, 1e9f, 1e9f);
     lastTime_ = 0.0f;
@@ -31,7 +32,7 @@ void AnimationRecorder::recordFrame(const ue::scene::Scene& scene, f32 timeSecon
 
     ue::scene::GameObject* targetG = nullptr;
     for (auto* object : scene.allObjects()) {
-        if (object->uuid == targetId_) {
+        if (object->id == targetId_) {
             targetG = object;
             break;
         }

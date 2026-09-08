@@ -10,6 +10,7 @@ struct ImDrawList;
 
 namespace ue::scene {
 class Scene;
+class GameObject;
 }
 
 namespace ue::render {

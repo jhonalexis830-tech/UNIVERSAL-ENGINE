@@ -23,6 +23,7 @@ using GLint   = i32;
 using GLsizei = i32;
 using GLfloat = f32;
 using GLchar  = char;
+using GLubyte = u8;
 using GLboolean = u8;
 using GLvoid  = void;
 using GLbitfield = u32;

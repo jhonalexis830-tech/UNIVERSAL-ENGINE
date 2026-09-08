@@ -47,6 +47,8 @@ public:
              physics::PhysicsWorld& physics, media::FrameRecorder& recorder,
              anim::Animator& animator);
 
+    ~UiSystem() override;
+
     EditorState& state() override { return state_; }
     void update(f32 deltaSeconds) override;
 

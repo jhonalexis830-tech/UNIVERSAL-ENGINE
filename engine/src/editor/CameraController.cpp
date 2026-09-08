@@ -10,6 +10,7 @@
 
 namespace ue::editor {
 
+using math::Vector2;
 using math::Vector3;
 
 CameraController::CameraController(render::Camera& camera)
