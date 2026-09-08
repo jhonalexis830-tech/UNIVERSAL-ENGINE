@@ -39,7 +39,7 @@ include(FetchContent)
 FetchContent_Declare(
     glfw
     URL      https://github.com/glfw/glfw/archive/refs/tags/3.3.9.tar.gz
-    URL_HASH SHA256=4cf729474f81f37e2e2e6d5beab51c9f8ee9f15c8d49b6224d1fb6e2637dc680
+    URL_HASH SHA256=a7e7faef424fcb5f83d8faecf9d697a338da7f7a906fc1afbc0e1879ef31bd53
 )
 
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
@@ -51,14 +51,14 @@ set(GLFW_INSTALL        OFF CACHE BOOL "" FORCE)
 FetchContent_Declare(
     imgui
     URL      https://github.com/ocornut/imgui/archive/refs/tags/v1.90.7.tar.gz
-    URL_HASH SHA256=d636586e597dd4491a75b254fd3ece6b996132a23d03721d2fee12e0fb2f0d7a
+    URL_HASH SHA256=872574217643d4ad7e9e6df420bb8d9e0d468fb90641c2bf50fd61745e05de99
 )
 
 # --- nlohmann/json (serialización de escenas) -----------------
 FetchContent_Declare(
     nlohmann_json
-    URL      https://github.com/nlohmann/json/archive/refs/tags/v3.11.3.tar.gz
-    URL_HASH SHA256=0d8ef5af7f9794e3263480193c4915492b6ee6b68887203563c5b709c54b54ea
+URL      https://github.com/nlohmann/json/archive/refs/tags/v3.11.3.tar.gz
+    URL_HASH SHA256=0d8ef5af7f9794e3263480193c491549b2ba6cc74bb018906202ada498a79406
 )
 
 FetchContent_MakeAvailable(glfw imgui nlohmann_json)
