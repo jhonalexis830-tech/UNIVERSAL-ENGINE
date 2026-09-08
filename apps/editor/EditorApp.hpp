@@ -41,6 +41,7 @@ class IEditorUserInterface;
 class EditorApp {
 public:
     EditorApp() = default;
+    ~EditorApp();
 
     bool initialize(int argc, char* argv[]);
     void run();

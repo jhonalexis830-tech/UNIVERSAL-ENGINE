@@ -29,6 +29,8 @@
 
 using namespace ue;
 
+EditorApp::~EditorApp() = default;
+
 namespace {
     // Azul metálico profundo del tema UNIVERSAL ENGINE.
     const ue::math::Color kClearColor(0.043f, 0.051f, 0.075f, 1.0f);
