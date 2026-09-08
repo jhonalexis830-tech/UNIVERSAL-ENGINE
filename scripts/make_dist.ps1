@@ -23,10 +23,16 @@ if (-not $exe) { throw "No se encontro UE_Editor.exe en '$BuildDir'." }
 
 if (-not $Version) {
     $Version = "0.1.0"
-    $tagOut = & git -C $Root describe --tags --abbrev=0 2>&1
-    if ($LASTEXITCODE -eq 0 -and $tagOut) {
-        $Version = ($tagOut | Select-Object -First 1).TrimStart("v")
+    $describeOut = [System.IO.Path]::GetTempFileName()
+    $describeErr = [System.IO.Path]::GetTempFileName()
+    $proc = Start-Process git -ArgumentList @("-C", $Root, "describe", "--tags", "--abbrev=0") `
+        -NoNewWindow -Wait -PassThru `
+        -RedirectStandardOutput $describeOut -RedirectStandardError $describeErr
+    if ($proc.ExitCode -eq 0) {
+        $tag = (Get-Content $describeOut -Raw).Trim()
+        if ($tag) { $Version = $tag.TrimStart("v") }
     }
+    Remove-Item $describeOut, $describeErr -Force -ErrorAction SilentlyContinue
 }
 
 $distName = "UniversalEngine-Editor-$Version-win-x64"
