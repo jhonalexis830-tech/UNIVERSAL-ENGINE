@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ue/anim/Animator.hpp"
+#include "ue/animation/Animator.hpp"
 #include "ue/core/Time.hpp"
 #include "ue/core/Types.hpp"
 #include "ue/editor/IEditorUserInterface.hpp"
