@@ -1,0 +1,21 @@
+* text=auto
+
+*.cpp  text
+*.hpp  text
+*.h    text
+*.md   text
+*.txt  text
+*.yml  text
+*.yaml text
+*.json text
+*.svg  text
+*.ps1  text eol=crlf
+*.ueproj text
+
+*.png  binary
+*.jpg  binary
+*.bmp  binary
+*.lib  binary
+*.obj  binary
+*.exe  binary
+*.zip  binary

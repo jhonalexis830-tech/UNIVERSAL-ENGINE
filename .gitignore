@@ -1,0 +1,37 @@
+# Compilación
+build/
+out/
+dist/
+*.user
+*.suo
+*.vcxproj
+*.vcxproj.filters
+*.sln
+.vs/
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Binarios
+*.exe
+*.dll
+*.lib
+*.obj
+*.pdb
+*.ilk
+
+# Salidas del motor
+Recordings/
+Capturas/
+Proyectos/
+
+# Cache
+CMakeCache.txt
+CMakeFiles/
+.cache/
