@@ -2,9 +2,9 @@
 
 #include "ue/platform/IInput.hpp"
 
-#include <GLFW/glfw3.h>
-
 #include <functional>
+
+struct GLFWwindow;
 
 namespace ue::platform {
 
