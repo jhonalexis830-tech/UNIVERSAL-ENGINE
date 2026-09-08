@@ -22,9 +22,11 @@ if (-not $exe) {
 if (-not $exe) { throw "No se encontro UE_Editor.exe en '$BuildDir'." }
 
 if (-not $Version) {
-    $Version = & git -C $Root describe --tags --abbrev=0 2>$null
-    if (-not $Version) { $Version = "0.1.0" }
-    $Version = $Version.TrimStart("v")
+    $Version = "0.1.0"
+    $tagOut = & git -C $Root describe --tags --abbrev=0 2>&1
+    if ($LASTEXITCODE -eq 0 -and $tagOut) {
+        $Version = ($tagOut | Select-Object -First 1).TrimStart("v")
+    }
 }
 
 $distName = "UniversalEngine-Editor-$Version-win-x64"
