@@ -346,7 +346,8 @@ void TransformGizmo::draw(ImDrawList& drawList, const render::Camera& camera,
         // Mangos por vértice.
         for (size_t i = 0; i < data.vertices.size(); ++i) {
             const bool selected = (static_cast<i32>(i) == hotVertex_);
-            const ImVec2 p = toScreen(model.transformPoint(data.vertices[i].position));
+            const math::Vector2 sp = toScreen(model.transformPoint(data.vertices[i].position));
+            const ImVec2 p(sp.x, sp.y);
             ImU32 col = selected ? IM_COL32(255, 170, 60, 255)
                                  : IM_COL32(120, 180, 255, 220);
             drawList.AddCircleFilled(p, selected ? 6.0f : 4.0f, col);

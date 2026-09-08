@@ -5,6 +5,7 @@
 #include "ue/core/SystemPaths.hpp"
 #include "ue/media/BmpImage.hpp"
 #include "ue/render/Camera.hpp"
+#include "ue/render/IRenderer.hpp"
 #include "ue/scene/MeshFactory.hpp"
 #include "ue/scene/Scene.hpp"
 #include "ue/scene/SceneSerializer.hpp"
