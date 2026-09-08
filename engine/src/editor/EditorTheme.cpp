@@ -5,7 +5,7 @@
 namespace ue::editor {
 
 namespace {
-    ImVec4 cv(float rgb[4]) { return ImVec4(rgb[0], rgb[1], rgb[2], rgb[3]); }
+    ImVec4 cv(const float* rgb) { return ImVec4(rgb[0], rgb[1], rgb[2], rgb[3]); }
 }
 
 const EditorTheme::Colors& EditorTheme::colors() {
