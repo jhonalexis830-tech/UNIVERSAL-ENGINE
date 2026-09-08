@@ -1,40 +1,19 @@
 #pragma once
 
+#include "ue/anim/Animator.hpp"
 #include "ue/core/Time.hpp"
 #include "ue/core/Types.hpp"
+#include "ue/editor/IEditorUserInterface.hpp"
+#include "ue/media/FrameRecorder.hpp"
+#include "ue/physics/Physics.hpp"
+#include "ue/platform/Input.hpp"
+#include "ue/platform/Window.hpp"
+#include "ue/render/OpenGLRenderer.hpp"
+#include "ue/scene/Scene.hpp"
 
 #include <memory>
 #include <string>
 #include <vector>
-
-namespace ue::platform {
-class Window;
-class Input;
-}
-
-namespace ue::render {
-class OpenGLRenderer;
-}
-
-namespace ue::physics {
-class PhysicsWorld;
-}
-
-namespace ue::media {
-class FrameRecorder;
-}
-
-namespace ue::scene {
-class Scene;
-}
-
-namespace ue::anim {
-class Animator;
-}
-
-namespace ue::editor {
-class IEditorUserInterface;
-}
 
 /// Aplicación del editor (Fase 1). Encaja las piezas del motor en un bucle
 /// principal típico: entrada -> simulación -> render -> interfaz -> presentar.
